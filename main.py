@@ -11,7 +11,7 @@ MONGO_URI="mongodb://localhost:27017"
 DB_NAME="digicollect"
 
 app = FastAPI()
-client = AsyncMongoClient(MONGO_URI)
+client = AsyncIOMotorClient(MONGO_URI)
 db = client[DB_NAME]
 
 
