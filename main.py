@@ -2,6 +2,7 @@ from bson import ObjectId
 from fastapi import FastAPI, HTTPException
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
+from pymongo import AsyncMongoClient
 
 
 
@@ -10,7 +11,7 @@ MONGO_URI="mongodb://localhost:27017"
 DB_NAME="digicollect"
 
 app = FastAPI()
-client = AsyncIOMotorClient(MONGO_URI)
+client = AsyncMongoClient(MONGO_URI)
 db = client[DB_NAME]
 
 
